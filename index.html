@@ -1,48 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Jekyll Multiple Languages : Support multiple languages in your Jekyll site" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jekyll Multiple Languages Plugin by screeninteraction</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Jekyll Multiple Languages</title>
   </head>
-
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/screeninteraction/jekyll-multiple-languages-plugin">View on GitHub</a>
+      <header>
+        <h1>Jekyll Multiple Languages Plugin</h1>
+        <p>Support multiple languages in your Jekyll site</p>
+      </header>
 
-          <h1 id="project_title">Jekyll Multiple Languages</h1>
-          <h2 id="project_tagline">Support multiple languages in your Jekyll site</h2>
+      <div id="banner">
+        <span id="logo"></span>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/screeninteraction/jekyll-multiple-languages-plugin/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/screeninteraction/jekyll-multiple-languages-plugin/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <a href="https://github.com/screeninteraction/jekyll-multiple-languages-plugin" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/screeninteraction/jekyll-multiple-languages-plugin/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/screeninteraction/jekyll-multiple-languages-plugin/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
         <h1>
 <a name="multiple-languages-in-jekyll" class="anchor" href="#multiple-languages-in-jekyll"><span class="octicon octicon-link"></span></a>Multiple Languages in Jekyll</h1>
 
-<hr><p>Jekyll Multiple Languages is an internationalization plugin for <a href="https://github.com/mojombo/jekyll">Jekyll</a>. It compiles your Jekyll site for one or more languages with a similar approach as Rails does. The different sites will be stored in sub folders with the same name as the language it contains.</p>
+<p>Jekyll Multiple Languages is an internationalization plugin for <a href="https://github.com/mojombo/jekyll">Jekyll</a>. It compiles your Jekyll site for one or more languages with a similar approach as Rails does. The different sites will be stored in sub folders with the same name as the language it contains.</p>
 
-<p>The plugin is developed at <a href="http://www.screeninteraction.com">Screen Interaction</a>.</p>
+<p>The plugin is developed as an utility at <a href="http://www.screeninteraction.com">Screen Interaction</a></p>
 
 <h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<p>Copy or link the file <code>multiple-languages-plugin.rb</code> into your <code>_plugins</code> folder
-for your Jekyll project.</p>
+<h3>
+<a name="submodule" class="anchor" href="#submodule"><span class="octicon octicon-link"></span></a>Submodule</h3>
 
 <p>If your Jekyll project is in a git repository, you can easily
 manage your plugins by utilizing git submodules.</p>
@@ -59,6 +67,37 @@ git pull origin master
 </code></pre>
 
 <h3>
+<a name="copy-file" class="anchor" href="#copy-file"><span class="octicon octicon-link"></span></a>Copy file</h3>
+
+<p>Copy or link the file <code>lib/jekyll/multiple/languages/plugin.rb</code> into your <code>_plugins</code> folder for your Jekyll project.</p>
+
+<h3>
+<a name="gem-" class="anchor" href="#gem-"><span class="octicon octicon-link"></span></a>Gem <a href="http://badge.fury.io/rb/jekyll-multiple-languages-plugin"><img src="https://badge.fury.io/rb/jekyll-multiple-languages-plugin.png" alt="Gem Version"></a>
+</h3>
+
+<p>This plugin is available as a Rubygem, <a href="https://rubygems.org/gems/jekyll-multiple-languages-plugin">https://rubygems.org/gems/jekyll-multiple-languages-plugin</a>.</p>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'jekyll-multiple-languages-plugin'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install jekyll-multiple-languages-plugin
+</code></pre>
+
+<p>To activate the plugin add this line in to a *.rb file in the _plugins directory:</p>
+
+<pre><code>require 'jekyll/multiple/languages/plugin'
+</code></pre>
+
+<h3>
 <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h3>
 
 <ul>
@@ -67,6 +106,12 @@ git pull origin master
 <li>Uses <a href="https://github.com/Shopify/liquid">Liquid tags</a> in your HTML for including translated strings.</li>
 <li>Compiles the site multiple times for all supported languages into separate subfolders.</li>
 <li>The plugin even works with the -watch flag turned on and will rebuild all languages automatically.</li>
+<li>Contains an example web site thanks to <a href="https://github.com/davrandom/">@davrandom</a>
+</li>
+<li>Supports translated keys in YAML format</li>
+<li>Supports translated template files</li>
+<li>
+<em>NEW!</em> Supports writing translated posts</li>
 </ul><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
@@ -85,21 +130,21 @@ git pull origin master
 
 <p>Create this folder structure in your Jekyll project as an example:</p>
 
-<pre><code>- /_i18/sv.yml
-- /_i18/en.yml
-- /_i18/de.yml
-- /_i18/fr.yml
-- /_i18/sv/pagename/blockname.md
-- /_i18/en/pagename/blockname.md
-- /_i18/de/pagename/blockname.md
-- /_i18/fr/pagename/blockname.md
+<pre><code>- /_i18n/sv.yml
+- /_i18n/en.yml
+- /_i18n/de.yml
+- /_i18n/fr.yml
+- /_i18n/sv/pagename/blockname.md
+- /_i18n/en/pagename/blockname.md
+- /_i18n/de/pagename/blockname.md
+- /_i18n/fr/pagename/blockname.md
 </code></pre>
 
 <p>To add a string to your site use one of these</p>
 
-<pre lang="liquid"><code>{% t key ‰}
+<pre lang="liquid"><code>{% t key %}
 or 
-{% translate key ‰}
+{% translate key %}
 </code></pre>
 
 <p>Liquid tags. This will pick the correct string from the <code>language.yml</code> file during compilation.</p>
@@ -116,21 +161,21 @@ or
 
 <p>To access the english key, use this tag:</p>
 
-<pre lang="liquid"><code>{% t global.english ‰} 
+<pre lang="liquid"><code>{% t global.english %} 
 or 
-{% translate global.english ‰}
+{% translate global.english %}
 </code></pre>
 
 <p>The plugin also supports using different markdown files for different languages using the </p>
 
-<pre lang="liquid"><code>{% tf pagename/blockname.md ‰} 
+<pre lang="liquid"><code>{% tf pagename/blockname.md %} 
 or 
-{% translate_file pagename/blockname.md ‰}
+{% translate_file pagename/blockname.md %}
 </code></pre>
 
 <p>This plugin have exactly the same support and syntax as the built in</p>
 
-<pre lang="liquid"><code>{% include file ‰}
+<pre lang="liquid"><code>{% include file %}
 </code></pre>
 
 <p>tag, so plugins that extends its functionality should be picked up by this plugin as well.</p>
@@ -164,7 +209,7 @@ or
 </pre></div>
 
 <h2>
-<a name="linking-between-languages" class="anchor" href="#linking-between-languages"><span class="octicon octicon-link"></span></a>Linking between languages</h2>
+<a name="link-between-languages" class="anchor" href="#link-between-languages"><span class="octicon octicon-link"></span></a>Link between languages</h2>
 
 <p>This plugin gives you the variables</p>
 
@@ -180,26 +225,61 @@ and
 <p>This allows you to create solutions like this:</p>
 
 <pre lang="liquid"><code>{% if site.lang == "sv" %}
-    {% capture link1 %}{{ site.baseurl_root }}en{{ page.url}}{% endcapture %}
+    {% capture link1 %}{{ site.baseurl_root }}/en{{ page.url}}{% endcapture %}
     &lt;a href="{{ link1 }}" &gt;{% t global.english %}&lt;/a&gt;
-{% else if site.lang == "en" %}
-    {% capture link2 %}{{ site.baseurl_root }}{{ page.url | remove_first: '/'  }}{% endcapture %}
+  {% else if site.lang == "en" %}
+    {% capture link2 %}{{ site.baseurl_root }}{{ page.url  }}{% endcapture %}
     &lt;a href="{{ link2 }}" &gt;{% t global.swedish %}&lt;/a&gt;
-{% endif %}
+  {% endif %}
 </code></pre>
 
-<p>This code will add an <code>"English"</code> link in the Swedish pages and the other way around in the English pages.</p>
-      </section>
-    </div>
+<p>This snippet will create a link that will toggle between Swedish and English. A more detailed description of the variables used follows:</p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Jekyll Multiple Languages maintained by <a href="https://github.com/screeninteraction">screeninteraction</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<table>
+<thead><tr>
+<th align="right">Name</th>
+<th align="left">Value</th>
+<th align="left">Example</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="right">site.lang</td>
+<td align="left">The language used in the current compilation stage</td>
+<td align="left"><code>en</code></td>
+</tr>
+<tr>
+<td align="right">site.baseurl</td>
+<td align="left">Points to the root of the site including the current language</td>
+<td align="left"><code>http://foo.bar/en</code></td>
+</tr>
+<tr>
+<td align="right">site.baseurl_root</td>
+<td align="left">Points to the root of the page without the language path</td>
+<td align="left"><code>http://foo.bar</code></td>
+</tr>
+<tr>
+<td align="right">page.url</td>
+<td align="left">The current page's relative URL to the baseurl</td>
+<td align="left"><code>/a/sub/folder/page/</code></td>
+</tr>
+</tbody>
+</table><h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/screeninteraction">screeninteraction</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -210,7 +290,6 @@ and
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
