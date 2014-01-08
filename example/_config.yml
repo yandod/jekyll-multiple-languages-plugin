@@ -4,4 +4,4 @@ pygments: true
 
 baseurl: ""
 
-languages: ["it", "en", "es"]
+languages: ["it", "en", "es", "ja"]
